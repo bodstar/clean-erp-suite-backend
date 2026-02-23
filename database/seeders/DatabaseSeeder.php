@@ -15,11 +15,17 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-        $this->call(LaratrustSeeder::class);
+        $this->call([
+            LaratrustSeeder::class,           // roles + permissions
+            TeamSeeder::class,                // teams
+            UserSeeder::class,                // users
+            TeamMembershipSeeder::class,      // team_user pivot
+            TeamRoleAssignmentSeeder::class,  // assign roles within teams
+        ]);
 
-        User::factory()->create([
+        /*User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
-        ]);
+        ]);*/
     }
 }
