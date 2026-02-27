@@ -22,6 +22,7 @@ class TeamRoleAssignmentSeeder extends Seeder
 
         // Team-scoped roles
         $hq->addRole('superadministrator', $hqTeam);
+        $hq->addRole('superadministrator', $franchiseTeam);
         $franchise->addRole('administrator', $franchiseTeam);
 
         // Optional: HQ can be admin inside franchise too

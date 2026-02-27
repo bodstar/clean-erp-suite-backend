@@ -21,7 +21,7 @@ class TeamMembershipSeeder extends Seeder
         $franchise = User::where('email', 'franchise@clean.local')->firstOrFail();
 
         // Explicit membership
-        $hq->teams()->syncWithoutDetaching([$hqTeam->id]);
+        $hq->teams()->syncWithoutDetaching([$hqTeam->id, $franchiseTeam->id]);
         $franchise->teams()->syncWithoutDetaching([$franchiseTeam->id]);
 
         // Optional: HQ belongs to franchise too (for support/impersonation style workflows)
