@@ -21,6 +21,9 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,                // users
             TeamMembershipSeeder::class,      // team_user pivot
             TeamRoleAssignmentSeeder::class,  // assign roles within teams
+            MPromoPartnerTypeSeeder::class,
+            MPromoPartnerStatusSeeder::class,
+            MPromoPartnerSeeder::class,
         ]);
 
         /*User::factory()->create([
